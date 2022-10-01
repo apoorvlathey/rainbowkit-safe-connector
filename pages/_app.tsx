@@ -4,12 +4,8 @@ import type { AppProps } from "next/app";
 import {
   RainbowKitProvider,
   connectorsForWallets,
+  wallet,
 } from "@rainbow-me/rainbowkit";
-import {
-  injectedWallet,
-  rainbowWallet,
-  walletConnectWallet,
-} from "@rainbow-me/rainbowkit/dist/wallets/walletConnectors";
 import SafeConnector from "../connectors/SafeConnector";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
@@ -35,13 +31,15 @@ const { chains, provider, webSocketProvider } = configureChains(
   ]
 );
 
+// NOTE: using rainbowkit@0.6.2 as latest version breaks the import of wallets
+// more info: https://github.com/rainbow-me/rainbowkit/issues/788#issuecomment-1263163970
 const connectors = connectorsForWallets([
   {
     groupName: "Recommended",
     wallets: [
-      injectedWallet({ chains }),
-      rainbowWallet({ chains }),
-      walletConnectWallet({ chains }),
+      wallet.injected({ chains }),
+      wallet.rainbow({ chains }),
+      wallet.walletConnect({ chains }),
       SafeConnector({ chains }),
     ],
   },
