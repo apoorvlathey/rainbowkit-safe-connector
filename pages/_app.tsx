@@ -9,7 +9,7 @@ import {
   injectedWallet,
   rainbowWallet,
   walletConnectWallet,
-} from "@rainbow-me/rainbowkit/wallets";
+} from "@rainbow-me/rainbowkit/dist/wallets/walletConnectors";
 import SafeConnector from "../connectors/SafeConnector";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
