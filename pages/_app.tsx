@@ -4,8 +4,12 @@ import type { AppProps } from "next/app";
 import {
   RainbowKitProvider,
   connectorsForWallets,
-  wallet,
 } from "@rainbow-me/rainbowkit";
+import {
+  injectedWallet,
+  rainbowWallet,
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 import SafeConnector from "../connectors/SafeConnector";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
@@ -37,9 +41,9 @@ const connectors = connectorsForWallets([
   {
     groupName: "Recommended",
     wallets: [
-      wallet.injected({ chains }),
-      wallet.rainbow({ chains }),
-      wallet.walletConnect({ chains }),
+      injectedWallet({ chains }),
+      rainbowWallet({ chains }),
+      walletConnectWallet({ chains }),
       SafeConnector({ chains }),
     ],
   },
