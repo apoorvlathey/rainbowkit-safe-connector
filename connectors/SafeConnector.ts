@@ -1,5 +1,7 @@
 import { Chain, Wallet } from "@rainbow-me/rainbowkit";
-import { SafeConnector } from "@gnosis.pm/safe-apps-wagmi";
+// current package is not compatible with latest wagmi version
+// import { SafeConnector } from "@gnosis.pm/safe-apps-wagmi";
+import { SafeConnector } from "./gnosis/SafeConnector";
 
 export interface MyWalletOptions {
   chains: Chain[];

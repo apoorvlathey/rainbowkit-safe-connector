@@ -9,19 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@gnosis.pm/safe-apps-wagmi": "^1.0.3",
+    "@ethersproject/providers": "^5.7.2",
+    "@gnosis.pm/safe-apps-provider": "^0.14.0",
+    "@gnosis.pm/safe-apps-sdk": "^7.8.0",
+    "@gnosis.pm/safe-apps-wagmi": "^1.1.0",
     "@rainbow-me/rainbowkit": "0.6.2",
-    "ethers": "^5.0.0",
-    "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "wagmi": "^0.6.0"
+    "@wagmi/core": "^0.7.4",
+    "ethers": "^5.7.2",
+    "next": "^12.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "wagmi": "^0.8.5"
   },
   "devDependencies": {
-    "@types/node": "^17.0.35",
-    "@types/react": "^18.0.9",
-    "eslint": "^8.15.0",
-    "eslint-config-next": "^12.1.6",
-    "typescript": "^4.7.2"
+    "@types/node": "^17.0.45",
+    "@types/react": "^18.0.25",
+    "eslint": "^8.28.0",
+    "eslint-config-next": "^12.3.3",
+    "typescript": "^4.9.3"
   }
 }
